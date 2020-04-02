@@ -35,5 +35,16 @@ $ cat *.txt
 
 ```
 
+- Comando ```mv``` move, arquivos ou diretórios.
+
+- Comando ```cp``` copia, arquivos ou diretórios.
+
+- Exemplos: 
+
+```
+$ cp bemvindo2.txt bemvindo.txt # copia e muda nome ao mesmo tempo
+
+
+```
 
 
