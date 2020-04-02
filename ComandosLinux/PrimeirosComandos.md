@@ -16,14 +16,22 @@
 
 - Comando ```mkdir``` cria novo diretório.
 
-- Comando ```rmdir``` remove um **diretório vazio**, ```rm``` remove um arquivo, e ao utilizar o ```-r```(r == recursivamente) remove **vários arquivos ou diretórios**. Ex:
+- Comando ```rmdir``` remove um **diretório vazio**, ```rm``` remove um arquivo, e ao utilizar o ```-r``` remove recursivamente **vários arquivos ou diretórios**. 
+
+- Caracteres especiais:  ```?``` só encontra os arquivos que tenham apenas **UM** caractere diferente do nome base e o  ```*``` busca quaisquer números de caracteres.
+  
+- Exemplo:
   
  ```
-rmdir pasta_vazia
-rmdir -r pasta_com_muitos_arquivos
+$ rmdir pasta_vazia
 
-rm arquivo.txt
+$ rmdir -r pasta_com_muitos_arquivos
 
+$ rm arquivo.txt
+
+$ cat arquivo?.txt
+
+$ cat *.txt
 
 ```
 
