@@ -22,3 +22,24 @@ $ kill 344 # o número 344 é o PID
 $ ps -e | grep firefox
 
 ```
+
+- Comando `top` mostra a situação dos processos, do processador e da memória, além de outras informações em uma única tela.
+
+* Comando `killall` permite matar todos os processos de um mesmo programa.
+
+* Exemplo:
+
+```
+
+# exemplo seguindo uma sequência no terminal
+# 1º verifica o desempenho do computador (cpu , memória, ...)
+# 2º filtra com comando ps -ef | grep top, exibir todos os top em execução
+# 3º mata o processo com killall passando nome (ou pode ser o pid)
+
+$ top
+
+$ ps -ef | grep top
+
+$ killall -9 top
+
+```
