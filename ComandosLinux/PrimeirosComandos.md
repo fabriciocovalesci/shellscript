@@ -16,6 +16,29 @@
 
 - Comando `mkdir` cria novo diretório.
 
+- Comando `-n` lista numeros de linhas
+
+- Comando `head` lê apenas (por padrão 10 linhas) o cabeçalho de um arquivo
+
+```
+$ head -n 5 texto.txt # lê apenas 5 linhas a partir do cabeçalho
+
+```
+
+- Comando `tail` lê o rodapé de um arquivo.
+
+```
+$ tail -n 5 texto.txt # lê apenas 5 linhas a partir do rodapé
+
+```
+
+- Comando `less` permite navegar usando as setas **cima** e **baixo** dentro do arquivo.
+
+```
+$ less texto.txt
+
+```
+
 ### Remover
 
 - Comando `rmdir` remove um **diretório vazio**, `rm` remove um arquivo, e ao utilizar o `-r` remove recursivamente **vários arquivos ou diretórios**.
