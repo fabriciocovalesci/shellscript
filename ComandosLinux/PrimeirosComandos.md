@@ -71,4 +71,19 @@ $ zip todosTxt.zip *.txt #zipa todos arquivo com extenção .txt
 
 ### Comando tar
 
--
+- O comando usa as opções –cvf, que significam:
+
+1. c – cria um novo arquivo .tar.
+2. v – mostra uma descrição do progresso de compactação.(pode ser omitida também)
+3. f – nome do arquivo.
+4. z – representa a compressão gzip (zip)
+5. x – extrai conteudo
+
+- tar -cvzf **nome_arquivo.tar.gz** **nome_pasta_ser_compactada**
+
+```
+$ tar -czf work.tar.gz workspace/ #cria arquivo compactado
+
+$ tar -vxzf work.tar.gz #extrai o conteudo
+
+```
