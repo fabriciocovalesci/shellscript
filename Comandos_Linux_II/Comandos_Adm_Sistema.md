@@ -56,7 +56,7 @@ $ killall -9 top
 
 Os arquivos no Linux podem ter permissões para `leitura (r)`, `escrita (w)` e `execução (x)`. Essas permissões são distribuídas para o dono do arquivo, ao grupo de usuários e também para outros usuários. Os `diretórios (d)` sofrem das mesmas regras.
 
-Com o comando `ls -l`, podemos verificar a listagem de arquivos com todas as informações de permissões discutidas.
+Com o comando usuário `ls -l`, podemos verificar a listagem de arquivos com todas as informações de permissões discutidas.
 
 - Comando `chmod` adicionar a permissão.
 
@@ -69,3 +69,31 @@ Assim como temos o `+x` para adicionar permissão de execução, temos também o
 - `./` indica que o script está salvo no diretório atual.
 
 - Também podemos executar um script através do comando `sh`
+
+- Para buscar por arquivos e programas no sistema operacional com o comando `locate`.
+
+- Para saber onde os programas estão instalados usamos o comando `which`.
+
+### Gerenciando senhas de usuários
+
+- Para mudar a senha do usuário, usamos o comando `passwd`.
+
+- Trocar ou colocar uma senha para o **usuário root** fazemos uso do comando `sudo` da seguinte forma:
+
+```
+
+$ sudo passwd
+
+```
+
+- Podemos nos logar como **outro usuário**, para isso usamos o comando `su` seguido do nome do **usuário** com qual queremos logar:
+
+```
+
+$ su root
+
+```
+
+- Podemos descobri também com qual usuário estamos logado usando o comando `whoami`.
+
+- E podemos sair da **sessão de um usuário** usando o comando `exit`.
