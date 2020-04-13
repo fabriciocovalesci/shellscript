@@ -43,3 +43,11 @@ $ ps -ef | grep top
 $ killall -9 top
 
 ```
+
+- Comando `jobs` mostra os processos que estão sendo executados dentro do bash;
+
+- Comando `fg` e `bg` jogam os processos para foreground e background, respectivamente;
+
+- Comando `pstree` mostra todos os processos em um gráfico de árvore.
+
+- Comando `[programa] &`: abre o [programa] diretamente em background;
