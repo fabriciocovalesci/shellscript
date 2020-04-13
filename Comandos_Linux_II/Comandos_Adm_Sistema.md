@@ -51,3 +51,21 @@ $ killall -9 top
 - Comando `pstree` mostra todos os processos em um gráfico de árvore.
 
 - Comando `[programa] &`: abre o [programa] diretamente em background;
+
+### Permissões
+
+Os arquivos no Linux podem ter permissões para `leitura (r)`, `escrita (w)` e `execução (x)`. Essas permissões são distribuídas para o dono do arquivo, ao grupo de usuários e também para outros usuários. Os `diretórios (d)` sofrem das mesmas regras.
+
+Com o comando `ls -l`, podemos verificar a listagem de arquivos com todas as informações de permissões discutidas.
+
+- Comando `chmod` adicionar a permissão.
+
+- `chmod -x` retira perrmissão de execução.
+
+- `chmod +x` adiciona permissão de execução.
+
+Assim como temos o `+x` para adicionar permissão de execução, temos também o `+r` e o `+w`. Podemos também combinar essas permissões da seguinte forma: `chmod +rwx`.
+
+- `./` indica que o script está salvo no diretório atual.
+
+- Também podemos executar um script através do comando `sh`
