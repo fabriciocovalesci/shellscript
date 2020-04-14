@@ -130,3 +130,57 @@ $ PATH=$PATH:/home/fabricio/workspace
 ```
 
 - Isso significa que o novo **PATH** será igual a o **PATH atual (\$PATH)** adicionado a ele **(:)** o diretório **/home/fabricio/workspace**.
+
+### Instalação de programas: apt
+
+- O Ubuntu nos disponibiliza um sistema de gerenciamento de pacotes chamado **apt**. Para ver as versões atualizadas dos programas que estão disponíveis para instalação fazemos:
+
+```
+$ sudo apt-get update
+
+```
+
+- Para buscar um programa de servidor FTP podemos fazer:
+
+```
+$ apt-cache search ftp
+
+```
+
+- Este comando busca na lista de pacotes disponíveis, qualquer programa que se encaixe nesse termo de busca, por isso retorna uma longa lista de programas. Sejamos mais restritos na busca e procuremos um servidor específico:
+
+```
+$ apt-cache search vsftp
+
+```
+
+- Para instalar este programa fazemos:
+
+```
+$ sudo apt-get install vsftpd
+
+```
+
+- Para que possamos **remover** programas, utilizamos o comando `apt-get remove` seguido do nome do programa. Como exemplo, vamos desinstalar o servidor que instalamos.
+
+```
+
+$ sudo apt-get remove vsftpd
+
+
+```
+
+- Instalar e desinstalar programas de forma fácil e prática com auxilio do gerenciador de **pacotes apt**. Os comandos são:
+
+```
+
+$ sudo apt-get install # instala um programa dado o nome
+
+$ sudo apt-get remove # desinstala um programa dado o nome
+
+$ sudo apt-get update # busca uma lista das versões atualizadas dos programas
+
+$ apt-cache search # procura os programas disponíveis para instalação
+
+
+```
