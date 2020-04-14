@@ -97,3 +97,20 @@ $ su root
 - Podemos descobri também com qual usuário estamos logado usando o comando `whoami`.
 
 - E podemos sair da **sessão de um usuário** usando o comando `exit`.
+
+### Controle de usuários
+
+- Mas como adicionamos um usuário novo na máquina? Basta usarmos o comando `adduser` seguido do nome do **usuário**, como por exemplo:
+
+```
+$ adduser jose
+
+```
+
+- Comando `chmod` é seguindo de alguns operadores, que são: `o` para **others**, ou seja, outros usuários, `o -` indica uma **remoção de permissão**, o `r` e `x` indicam **permissões de leitura** e **execução**. Se quiséssemos tirar permissões do próprio usuário, seria: `u-rx` e para o grupo seria: `g-rx`.
+
+```
+
+$ chmod o-rx jose
+
+```
