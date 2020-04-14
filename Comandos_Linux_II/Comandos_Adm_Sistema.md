@@ -114,3 +114,19 @@ $ adduser jose
 $ chmod o-rx jose
 
 ```
+
+### Variáveis de ambiente e PATH
+
+- O **diretório bin** existe para armazenar programas globais, aos quais todos os usuários têm acesso.
+
+- Para saber onde o **bash** procura os programas e os scripts para executar. Esse lugar é o **Path**, uma **Variável de Ambiente**. Se executarmos o comando `env` conseguimos visualizar todas as variáveis de ambiente. Para visualizarmos apenas o **PATH** podemos fazer `env | grep PATH` , e na listagem da variável **PATH** encontra-se o diretório **/usr/bin** e que os diretórios são separados por **:**. Estes diretórios são onde o bash procura os programas para serem executados.
+
+- Exemplo para adiciona um diretório no **PATH**
+
+```
+
+$ PATH=$PATH:/home/fabricio/workspace
+
+```
+
+- Isso significa que o novo **PATH** será igual a o **PATH atual (\$PATH)** adicionado a ele **(:)** o diretório **/home/fabricio/workspace**.
