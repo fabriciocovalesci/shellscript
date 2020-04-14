@@ -184,3 +184,29 @@ $ apt-cache search # procura os programas disponíveis para instalação
 
 
 ```
+
+### Novos programas com dpkg
+
+- Podemos instalar programas que não estão disponibilizados na central de programas do Ubuntu, ou seja, sem o uso do apt. Para isso nós baixamos um pacote desse programa em um site e depois o instalamos. O formato desse pacote é **dpkg**, que é um arquivo com a extensão **.deb**.
+
+- Para instalar utilizando o comando dpkg fazemos:
+
+```
+
+$ sudo dpkg -i [nome do pacote.deb] # -i de instalar
+
+```
+
+- Para a desinstalação não usamos o nome do arquivo baixado, mas sim o nome do pacote do programa, que neste caso é vsftpd.
+
+```
+
+$ sudo dpkg -r vsftpd
+
+```
+
+- Duas formas de instalar e desinstalar programas no Linux:
+
+1. **Via apt**: quando o programa já está disponibilizado na central do Sistema Operacional Linux.
+
+2. **Via dpkg**: quando baixamos pelo navegador da internet um pacote **.deb** do programa.
