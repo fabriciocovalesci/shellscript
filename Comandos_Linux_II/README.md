@@ -136,6 +136,7 @@ $ PATH=$PATH:/home/fabricio/workspace
 - O Ubuntu nos disponibiliza um sistema de gerenciamento de pacotes chamado **apt**. Para ver as versões atualizadas dos programas que estão disponíveis para instalação fazemos:
 
 ```
+
 $ sudo apt-get update
 
 ```
@@ -143,6 +144,7 @@ $ sudo apt-get update
 - Para buscar um programa de servidor FTP podemos fazer:
 
 ```
+
 $ apt-cache search ftp
 
 ```
@@ -150,6 +152,7 @@ $ apt-cache search ftp
 - Este comando busca na lista de pacotes disponíveis, qualquer programa que se encaixe nesse termo de busca, por isso retorna uma longa lista de programas. Sejamos mais restritos na busca e procuremos um servidor específico:
 
 ```
+
 $ apt-cache search vsftp
 
 ```
@@ -157,6 +160,7 @@ $ apt-cache search vsftp
 - Para instalar este programa fazemos:
 
 ```
+
 $ sudo apt-get install vsftpd
 
 ```
@@ -210,3 +214,47 @@ $ sudo dpkg -r vsftpd
 1. **Via apt**: quando o programa já está disponibilizado na central do Sistema Operacional Linux.
 
 2. **Via dpkg**: quando baixamos pelo navegador da internet um pacote **.deb** do programa.
+
+
+### Scripts de init e services
+
+- Para exemplificar vamos instalar novamente o __servidor FTP__, para verificarmos o funcionamento de serviços no Linux.
+
+```
+
+$ sudo apt-get install vsftpd #instala o servidor FTP
+
+$ ps -ef | grep vsftpd #testa se o programa está em execução
+
+```
+
+O programa está em execução, podemos para-lo, mas ao invés de usarmos o comando `kill`, usaremos o comando `service` seguido do nome do programa, e um indicador de ação, neste caso `stop`, para que o programa pare sua execução. Usamos o comando `service` pois o `vsftpd` é um serviço que roda toda vez que ligamos e desligamos a máquina.
+
+```
+
+$ sudo service vsftpd stop #para o serviço com stop
+
+```
+
+O comando `service` deve ser executado como __root__, caso não, teremos erros de permissão. Para ele voltar a execução, mudamos apenas a ação do comando **service** de **stop** para **start**:
+
+```
+
+$ sudo service vsftpd start #reinicia o processo
+
+```
+
+Por trás dos panos o que está realmente acontecendo é que um **script** de inicialização e desligamento (shutdown) que está localizado em **/etc/init.d/vsftpd** está sendo executado. Ele é executável! Sendo assim, podemos executá-lo diretamente:
+
+OBS: Lembre-se que podemos verificar se algo é executável ou não verificando suas permissões com o `comando ls -l`.
+
+```
+
+$ sudo /etc/init.d/vsftpd stop # encerra a execução
+
+$ sudo /etc/init.d/vsftpd start # inicializa-lo novamente
+
+```
+
+Os scripts dentro do diretório **/etc/init.d** são os programas que são executados no startup da máquina. Eles podem continuar rodando até desligarmos o computador ou rodar por apenas um instante e depois parar. Caso queiramos que um programa seja executado sempre ao iniciar da máquina, basta que deixemos esse programa nesta pasta.
+
