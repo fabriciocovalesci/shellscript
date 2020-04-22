@@ -302,3 +302,50 @@ $ sudo make install # Para instalar
 2. `make` para gerar o programa, ou seja, compilar. Lembrando que, neste passo, pode haver outras dependências necessárias para a tarefa e por isso talvez seja preciso realizar instalações de outras bibliotecas.
 
 3. `sudo make install` para que o programa seja instalado em nossa máquina. Lembrando que o sudo é necessário por causa de questões de permissão
+
+
+### Acesso remoto
+
+- Como acessar um servidor remoto no Linux. Para isso, teremos que fazer uma comunicação com o outro servidor. O que queremos é nos logar como um usuário. Para isso iremos usar o SSH. O primeiro passo é instalá-lo:
+
+```
+
+$ sudo apt-get install ssh
+
+```
+
+- Desta forma instala-se tanto o cliente SSH (**ssh-client**), quando o servidor (**ssh-server**). 
+
+- Para testarmos se o programa instalou corretamente, logaremos na nossa própria máquina utilizando o comando **ssh**, fornecendo o nome de um *usuário* já criado anteriormente e o *ip da máquina*.
+
+```
+$ ssh jose@localhost 
+
+```
+
+- Será pedida a *senha do usuário jose* e logo após, estaremos logados no servidor remoto. Poderemos executar uma série de comandos, porém não temos acesso às ferramentas e programas gráficos. Não podemos, por exemplo, abrir um navegador.
+
+- Para termos essa permissão, precisamos nos conectar usando um modificador que permita o uso de ferramentas gráficas. O **-X** é esse modificador:
+
+```
+
+$ ssh -X jose@localhost 
+
+```
+
+- Para encerrar a conexão, usamos o **comando exit**.
+
+- Lembrando que tudo o que estamos fazendo está sendo executado lá no servidor e não em nossa máquina. Somente o gráfico é mostrado em nossa máquina, as ações são todas remotas.
+
+- Agora vamos ver como copiar um arquivo da nossa máquina local para a máquina remota. Fazemos por meio do **comando scp**, indicando para ele qual é o arquivo e qual é o destino do arquivo:
+
+```
+
+$ scp work.zip jose@localhost:~/
+
+
+```
+
+- Com isso jogamos o arquivo *work.zip* no nosso servidor remoto. Se o buscarmos dentro da outra máquina, nos conectando novamente com o **ssh** e listarmos os arquivos com o **comando ls** iremos perceber que realmente ele foi copiado.
+
+- Caso seja necessária a copia de arquivos de **forma recursiva**, pode-se utilizar a opção **-r** assim como era feito com os **comandos mv e cp**.
