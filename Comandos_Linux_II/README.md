@@ -54,9 +54,9 @@ $ killall -9 top
 
 ### Permissões
 
-Os arquivos no Linux podem ter permissões para `leitura (r)`, `escrita (w)` e `execução (x)`. Essas permissões são distribuídas para o dono do arquivo, ao grupo de usuários e também para outros usuários. Os `diretórios (d)` sofrem das mesmas regras.
+- Os arquivos no Linux podem ter permissões para `leitura (r)`, `escrita (w)` e `execução (x)`. Essas permissões são distribuídas para o dono do arquivo, ao grupo de usuários e também para outros usuários. Os `diretórios (d)` sofrem das mesmas regras.
 
-Com o comando usuário `ls -l`, podemos verificar a listagem de arquivos com todas as informações de permissões discutidas.
+- Com o comando usuário `ls -l`, podemos verificar a listagem de arquivos com todas as informações de permissões discutidas.
 
 - Comando `chmod` adicionar a permissão.
 
@@ -64,7 +64,7 @@ Com o comando usuário `ls -l`, podemos verificar a listagem de arquivos com tod
 
 - `chmod +x` adiciona permissão de execução.
 
-Assim como temos o `+x` para adicionar permissão de execução, temos também o `+r` e o `+w`. Podemos também combinar essas permissões da seguinte forma: `chmod +rwx`.
+- Assim como temos o `+x` para adicionar permissão de execução, temos também o `+r` e o `+w`. Podemos também combinar essas permissões da seguinte forma: `chmod +rwx`.
 
 - `./` indica que o script está salvo no diretório atual.
 
@@ -228,7 +228,7 @@ $ ps -ef | grep vsftpd #testa se o programa está em execução
 
 ```
 
-O programa está em execução, podemos para-lo, mas ao invés de usarmos o comando `kill`, usaremos o comando `service` seguido do nome do programa, e um indicador de ação, neste caso `stop`, para que o programa pare sua execução. Usamos o comando `service` pois o `vsftpd` é um serviço que roda toda vez que ligamos e desligamos a máquina.
+- O programa está em execução, podemos para-lo, mas ao invés de usarmos o comando `kill`, usaremos o comando `service` seguido do nome do programa, e um indicador de ação, neste caso `stop`, para que o programa pare sua execução. Usamos o comando `service` pois o `vsftpd` é um serviço que roda toda vez que ligamos e desligamos a máquina.
 
 ```
 
@@ -236,7 +236,7 @@ $ sudo service vsftpd stop #para o serviço com stop
 
 ```
 
-O comando `service` deve ser executado como __root__, caso não, teremos erros de permissão. Para ele voltar a execução, mudamos apenas a ação do comando **service** de **stop** para **start**:
+- O comando `service` deve ser executado como __root__, caso não, teremos erros de permissão. Para ele voltar a execução, mudamos apenas a ação do comando **service** de **stop** para **start**:
 
 ```
 
@@ -244,7 +244,7 @@ $ sudo service vsftpd start #reinicia o processo
 
 ```
 
-Por trás dos panos o que está realmente acontecendo é que um **script** de inicialização e desligamento (shutdown) que está localizado em **/etc/init.d/vsftpd** está sendo executado. Ele é executável! Sendo assim, podemos executá-lo diretamente:
+- Por trás dos panos o que está realmente acontecendo é que um **script** de inicialização e desligamento (shutdown) que está localizado em **/etc/init.d/vsftpd** está sendo executado. Ele é executável! Sendo assim, podemos executá-lo diretamente:
 
 OBS: Lembre-se que podemos verificar se algo é executável ou não verificando suas permissões com o `comando ls -l`.
 
@@ -256,5 +256,49 @@ $ sudo /etc/init.d/vsftpd start # inicializa-lo novamente
 
 ```
 
-Os scripts dentro do diretório **/etc/init.d** são os programas que são executados no startup da máquina. Eles podem continuar rodando até desligarmos o computador ou rodar por apenas um instante e depois parar. Caso queiramos que um programa seja executado sempre ao iniciar da máquina, basta que deixemos esse programa nesta pasta.
+- Os scripts dentro do diretório **/etc/init.d** são os programas que são executados no startup da máquina. Eles podem continuar rodando até desligarmos o computador ou rodar por apenas um instante e depois parar. Caso queiramos que um programa seja executado sempre ao iniciar da máquina, basta que deixemos esse programa nesta pasta.
 
+
+###  Instalação a partir do código fonte
+
+- Inicialmente vamos ter que baixar seu código fonte, compilá-lo e instalá-lo. Faremos um teste baixando o código fonte de um projeto, o __Git__, um programa para controle de versão.
+
+- Primeiro vamos entrar no site do __git-scm__ em __git-scm.com__. Na aba __Tarballs__ encontramos as versões compactadas do código fonte do Git. Lá, baixaremos a versão **git-1.8.3.1.tar.gz**. É importante que seja o **tar.gz** por que o mesmo mantém as permissões de execução dos arquivos, enquanto um .zip não mantém.
+
+```
+
+$ tar zxf git-1.8.3.1.tar.gz # Descompacta arquivo
+
+```
+
+- Será criado um diretório com nome **git-1.8.3.1** com vários scripts que podem ser executados. 
+
+- Entraremos nele para os próximos passos.
+
+- O padrão de criação para instalação de um projeto através do código fonte em **C** é primeiramente testarmos a configuração da nossa máquina, ou seja, verificar se está faltando algum arquivo ou programa em nossa máquina que o *Git* precise para funcionar. Para isso, em geral, é disponibilizado um script chamado **"configure"**. O Git disponibiliza esse script, Vamos executá-lo:
+
+```
+
+$ ./configure
+
+```
+
+- O script `configure` fará uma série de checagens em nossa máquina, e ao fim, caso nenhum problema seja encontrado, poderemos usar o `comando make`, que é o padrão para rodar o build do projeto em **C**, no caso do *Git*.
+
+- O próximo passo é, enfim, instalá-lo na nossa máquina:
+
+```
+
+$ make # para rodar o build do programa
+
+$ sudo make install # Para instalar
+
+```
+
+- Portanto, existem basicamente três passos para instalar um programa a partir de seu código fonte:
+
+1. `./configure` para verificar as dependências e configurações da máquina.
+
+2. `make` para gerar o programa, ou seja, compilar. Lembrando que, neste passo, pode haver outras dependências necessárias para a tarefa e por isso talvez seja preciso realizar instalações de outras bibliotecas.
+
+3. `sudo make install` para que o programa seja instalado em nossa máquina. Lembrando que o sudo é necessário por causa de questões de permissão
