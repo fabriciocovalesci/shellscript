@@ -1,8 +1,21 @@
 #!/bin/bash
 
+# caminho absoluto passado para uns constante
 CAMINHO_IMAGENS=~/Documentos/shellscript/Conversao-jpg-png/imagens-livros
 
-convert $CAMINHO_IMAGENS/$1.jpg $CAMINHO_IMAGENS/$1.png
-convert $CAMINHO_IMAGENS/$2.jpg $CAMINHO_IMAGENS/$2.png
+#"Para cada variável imagem dentro do conjunto de parâmetros passados pelo usuário, 
+# englobamos todos eles usando $@".
+
+
+# Para pegar o conteúdo desses parâmetros, usamos o símbolo $.
+
+# com o $@ pegamos todos os parâmetros que o usuário passar, independente da quantidade.
+
+# usando loop for
+for imagem in $@
+do
+    convert $CAMINHO_IMAGENS/$imagem.jpg $CAMINHO_IMAGENS/$imagem.png
+done
+
 
 
