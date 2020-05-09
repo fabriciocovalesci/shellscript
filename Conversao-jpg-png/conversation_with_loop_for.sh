@@ -18,4 +18,9 @@ do
 done
 
 
+# Queremos converter o conteúdo da variável imagem que vai receber cada parâmetro
+# passado pelo nosso usuário, por isso utilizamos $imagem no lugar de $1.
+
+# Uma vez que esse laço for foi concluído, precisamos dizer que a tarefa dele foi 
+# finalizada e com o done, conseguimos esse resultado.
 
