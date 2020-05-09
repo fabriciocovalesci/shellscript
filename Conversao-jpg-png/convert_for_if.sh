@@ -28,3 +28,6 @@ done
 # usamos o | (lê-se pipe). Especificamos para o awk qual será o campo delimitador e qual será o local onde faremos 
 # o corte na mensagem exibida.
 
+# Essa verificação if [ -d png ] verifica somente se o diretório existe. 
+# Se o diretório não existe, ele vai ser criado. O símbolo de negação é !.
+# temos que finalizar o comando if com fi:
