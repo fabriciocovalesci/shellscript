@@ -34,7 +34,7 @@ varrer_diretorio(){
     cd $1
     for arquivo in *
     do
-        local caminho_arquivo=$(find ~/Documentos/shellscript/Conversao-jpg-png/imagens-livros -name $arquivo)
+        local caminho_arquivo=$(find ~/Documentos/shellscript/Conversao-jpg-png/imagens-novos-livros -name $arquivo)
         if [ -d $caminho_arquivo ]
         then
             varrer_diretorio $caminho_arquivo
