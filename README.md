@@ -1,6 +1,6 @@
 # Shell script
 
-Shell script nome dado a um arquivo que será interpretado por algum programa tipo **Shell**. Atualmente existem vários programas tipo Shell, além dos principais sh e bash, existem também, **ksh**, **zsh**, **csh** e **tcsh**. Um Shell script ou script em Shell necessita basicamente do interpretador (Shell). (Fonte: Origem: Wikipédia, a enciclopédia livre.)
+Shell script nome dado a um arquivo que será interpretado por algum programa tipo **Shell**. Atualmente existem vários programas tipo Shell, além dos principais sh e bash, existem também, **ksh**, **zsh**, **csh** e **tcsh**. Um Shell script ou script em Shell necessita basicamente do interpretador (Shell). [Fonte: Origem: Wikipédia, a enciclopédia livre.](https://pt.wikipedia.org/wiki/Shell_script)
 
 - Na pasta **Script_parte_I** tem uma breve introdução ao shell script, como:
 - 
