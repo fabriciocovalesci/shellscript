@@ -1,0 +1,5 @@
+Verificaremos como podemos realizar o filtro baseado no endereço IP, vendo o que um determinado endereço IP acessou do servidor. Filtraremos também as requisições, verificaremos como podemos pegar somente a requisição GET, POST, e DELETE.
+
+Validaremos entradas e parâmetros passados pelos usuários, afim de bloquear parâmetros vazios. Também será feita a verificação sobre o formato de um endereço IP, e depois, faremos a verificação constante do status do servidor web. Abordaremos como podemos programar o nosso script para que ele seja executado em um determinado período de tempo, e caso esse conteúdo esteja inacessível, mandaremos um e-mail para o administrador do sistema, para que ele esteja ciente que o servidor parou de funcionar.
+
+Depois, veremos como realizar o backup das informações do banco MySQL, e enviaremos o backup para a Amazon S3, criando um bucket para salvar as informações das tabelas do banco da Multillidae: a tabela de Produtos e a tabela de Usuarios. Depois de enviar, criaremos um script para pegar as informações novamente e restabelecer essas informações no banco.
