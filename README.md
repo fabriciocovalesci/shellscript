@@ -13,3 +13,16 @@ Shell script nome dado a um arquivo que será interpretado por algum programa ti
   4. Realizar operações matemáticas em um script
 
   5. Trabalhar com funções, condições
+
+
+- Na pasta [**Script_parte_II**](https://github.com/fabriciocovalesci/shellscript/tree/master/Script_part_II):
+
+  1. Entender como validar entradas passadas pelo usuário
+
+  2. Como monitorar um servidor e reinicializá-lo
+
+  3. Ententer como utilizar o crontab para agendar tarefas
+
+  4. Como enviar e-mails para usuários
+
+  5. Fazer backup de um banco e enviar para um bucket na Amazon
